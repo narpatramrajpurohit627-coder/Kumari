@@ -1,0 +1,107 @@
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Mood <!DOCTYPE html>
+<html>
+<body style="font-family: Arial; text-align: center; background: #f3e8ff; padding: 40px;">
+
+  <h1 style="color: purple;">Mood-to-Music Journal</h1>
+  <h2>Choose your mood</h2>
+
+  <button onclick="chooseMood('Happy')">😊 Happy</button>
+  <button onclick="chooseMood('Calm')">😌 Calm</button>
+  <button onclick="chooseMood('Sad')">😢 Sad</button>
+  <button onclick="chooseMood('Stressed')">😟 Stressed</button>
+
+  <h2>Write your note</h2>
+  <textarea id="note" placeholder="Write about your day..."></textarea>
+
+  <br><br>
+  <button onclick="saveMood()">Save My Mood</button>
+
+  <p id="message"></p>
+
+  <script>
+    let mood = "";
+
+    function chooseMood(selected) {
+      mood = selected;
+      document.getElementById("message").innerText =
+        "You chose: " + mood;
+    }
+
+    function saveMood() {
+      if (mood === "") {
+        document.getElementById("message").innerText =
+          "Please choose a mood first.";
+      } else {
+        document.getElementById("message").innerText =
+          "Saved! Your mood is " + mood;
+      }
+    }
+  </script>
+
+</body>
+</html>Journal</title>
+</head>
+
+<body style="font-family: Arial; text-align: center; background-color: #f3e8ff; padding: 40px;">
+
+    <h1>😊 My Mood Journal</h1>
+
+    <h2>How are you feeling today?</h2>
+
+    <button onclick="chooseMood('Happy')">😊 Happy</button>
+    <button onclick="chooseMood('Calm')">😌 Calm</button>
+    <button onclick="chooseMood('Sad')">😢 Sad</button>
+    <button onclick="chooseMood('Stress')">😰 Stress</button>
+
+    <h3 id="message"></h3>
+
+    <h2>Write your note</h2>
+
+    <textarea id="note" rows="5" cols="40"
+        placeholder="Write how you feel..."></textarea>
+
+    <br><br>
+
+    <button onclick="saveMood()">💾 Save My Mood</button>
+
+    <p id="saved"></p>
+
+    <script>
+
+        let mood = "";
+
+        function chooseMood(selectedMood) {
+
+            mood = selectedMood;
+
+            document.getElementById("message").innerText =
+                "You chose: " + mood;
+        }
+
+
+        function saveMood() {
+
+            let note = document.getElementById("note").value;
+
+            if (mood === "") {
+
+                document.getElementById("saved").innerText =
+                    "Please choose your mood first.";
+
+                return;
+            }
+
+            document.getElementById("saved").innerText =
+                "✅ Saved! Your mood is " + mood +
+                " and your note is: " + note;
+        }
+
+    </script>
+
+</body>
+</html>
+```
